@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Relais">
+  <rect width="64" height="64" rx="14" fill="#FAF7F2" stroke="#E4DCD2"/>
+  <rect x="12" y="16" width="10" height="32" rx="2" fill="#1A2F4A"/>
+  <rect x="42" y="22" width="10" height="26" rx="2" fill="#1A2F4A"/>
+  <rect x="22" y="29" width="20" height="6" rx="2" fill="#C45C26"/>
+</svg>

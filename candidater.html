@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Candidater — Relais</title>
+  <meta name="description" content="Déposer un projet Relais, promo Montpellier." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/relais.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36" /><span>Relais</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav">
+        <a href="index.html">Accueil</a>
+        <a href="pour-qui.html">Pour qui</a>
+        <a href="offre.html">Parcours</a>
+        <a href="modele.html">Modèle</a>
+        <a href="app.html">L’app</a>
+        <a href="charte.html">Charte</a>
+      </nav>
+      <a class="btn" href="candidater.html">Candidater</a>
+    </header>
+
+    <div class="page-hero">
+      <p class="kicker">Promo 1 · Montpellier</p>
+      <h1>Déposer un projet.</h1>
+    </div>
+    <div class="grid-2" style="padding-bottom:80px;">
+      <div>
+        <h2>On cherche</h2>
+        <p class="lede" style="margin-top:0;font-size:18px;">Un besoin et une solution. Un peu de temps. Un accès marché ou une capacité à aller le chercher. Léa ou Noa : même porte.</p>
+        <ul class="list-plain">
+          <li>Solution identifiée, pas une envie d’app</li>
+          <li>Porteur valide (temps + marché + vente)</li>
+          <li>Projet légal</li>
+        </ul>
+      </div>
+      <form id="form" novalidate>
+        <label for="name">Prénom et métier</label>
+        <input id="name" name="nom_metier" required placeholder="Léa, coach · Noa, projet" />
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required placeholder="vous@exemple.fr" />
+        <label for="stage">Vous avez déjà</label>
+        <select id="stage" name="situation">
+          <option>Des clients / une communauté + une solution</option>
+          <option>Une petite structure déjà en CA</option>
+          <option>Un potentiel clair, pas encore les moyens</option>
+          <option>Seulement une envie d’app, sans solution</option>
+        </select>
+        <label for="product">SaaS, app, ou les deux ?</label>
+        <input id="product" name="produit" />
+        <label for="block">Ce qui vous bloque</label>
+        <textarea id="block" name="blocage"></textarea>
+        <button class="btn" type="submit" id="send">Envoyer</button>
+        <div class="ok" id="ok"></div>
+      </form>
+    </div>
+    <script>
+      // Endpoint Formspree (ou équivalent) : créer un formulaire gratuit sur formspree.io et coller l'URL ici.
+      // Tant que c'est vide, le formulaire ouvre un email pré-rempli vers Relais : ça fonctionne sans serveur.
+      var RELAIS_FORM_ENDPOINT = "";
+      var RELAIS_MAIL = "gabriel.fourier@etu.umontpellier.fr";
+      var form = document.getElementById("form"), ok = document.getElementById("ok"), btn = document.getElementById("send");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        var d = new FormData(form), lines = [];
+        d.forEach(function (v, k) { lines.push(k + " : " + v); });
+        try {
+          var log = JSON.parse(localStorage.getItem("relais_candidatures") || "[]");
+          log.push({ date: new Date().toISOString(), data: Object.fromEntries(d) });
+          localStorage.setItem("relais_candidatures", JSON.stringify(log));
+        } catch (_) {}
+        if (RELAIS_FORM_ENDPOINT) {
+          btn.disabled = true;
+          fetch(RELAIS_FORM_ENDPOINT, { method: "POST", body: d, headers: { Accept: "application/json" } })
+            .then(function (r) { if (!r.ok) throw new Error(r.status); ok.textContent = "Candidature envoyée. On vous répond sous 5 jours ouvrés."; ok.style.display = "block"; form.reset(); })
+            .catch(function () { ok.textContent = "Envoi impossible pour l’instant. Écrivez-nous : " + RELAIS_MAIL; ok.style.display = "block"; })
+            .finally(function () { btn.disabled = false; });
+        } else {
+          var subject = encodeURIComponent("Candidature Relais — " + d.get("nom_metier"));
+          var body = encodeURIComponent(lines.join("\n"));
+          window.location.href = "mailto:" + RELAIS_MAIL + "?subject=" + subject + "&body=" + body;
+          ok.textContent = "Votre messagerie s’ouvre avec la candidature pré-remplie. Envoyez-la, on vous répond sous 5 jours ouvrés.";
+          ok.style.display = "block";
+        }
+      });
+    </script>
+    
+    <footer class="site-footer">
+      <span>Incubateur Relais · Montpellier, puis France</span>
+      <span><a href="charte.html">Charte</a> · <a href="candidater.html">Candidater</a></span>
+    </footer>
+  </div>
+  <script src="js/relais.js"></script>
+</body>
+</html>
