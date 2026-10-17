@@ -1,52 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Parcours — Relais</title>
-  <meta name="description" content="Starter, Build, Scale : de l’idée au produit utilisé." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/relais.css" />
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les deux offres — Incubatech Relais</title>
+<meta name="description" content="Accompagnement à 150 € HT par mois. Cadrage à 1 500 € HT et MVP de 20 000 à 30 000 € HT sur devis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/relais.css">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 </head>
 <body>
-  <div class="wrap">
-    <header class="site-header">
-      <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36" /><span>Relais</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-      <nav id="nav">
-        <a href="index.html">Accueil</a>
-        <a href="pour-qui.html">Pour qui</a>
-        <a href="offre.html" aria-current="page">Parcours</a>
-        <a href="modele.html">Modèle</a>
-        <a href="app.html">L’app</a>
-        <a href="charte.html">Charte</a>
-      </nav>
-      <a class="btn" href="candidater.html">Candidater</a>
-    </header>
-
-    <div class="page-hero">
-      <p class="kicker">Livrable 2 · Offre</p>
-      <h1>Trois portes. Une seule promesse : le produit sort.</h1>
-      <p class="lede">On accompagne le processus entrepreneurial. On construit aussi le logiciel. Le porteur reste dirigeant métier.</p>
-    </div>
-    <div class="grid-3">
-      <article class="card"><p class="kicker">01 · 4 semaines</p><h3>Starter</h3><p>Valider l’offre, les hypothèses, la landing. Cinq à huit conversations clients menées par le porteur. Go ou no-go. Gratuit, sélectif. Un no-go n’est pas un échec : on arrête avant d’écrire du code inutile.</p></article>
-      <article class="card"><p class="kicker">02 · 8 à 16 semaines</p><h3>Build</h3><p>MVP SaaS ou app. Souvent le web d’abord, le native ensuite, sauf si le mobile est le job quotidien. Sprints de deux semaines, une métrique unique. Vous restez CEO.</p></article>
-      <article class="card"><p class="kicker">03 · 6 mois</p><h3>Scale</h3><p>Vendre. Pricing. Juridique. Revue mensuelle. Abo 249 € HT / mois à la mise en ligne. Relais n’achète pas l’acquisition à votre place.</p></article>
-    </div>
-    <div class="grid-2" style="padding:48px 0 80px;">
-      <article class="card"><h3>Relation</h3><p>Hybride. Une demi-journée présentielle toutes les deux semaines à Montpellier. Le Build tient à distance. Le porteur a déjà une activité : il n’emménage pas dans un campus.</p></article>
-      <article class="card"><h3>Canaux</h3><p>Réseaux métier, écoles et programmes en amont (orientation, pas concurrence), French Tech locale, site Relais, bouche-à-oreille. Relais se place en aval produit.</p></article>
-    </div>
-    
-    <footer class="site-footer">
-      <span>Incubateur Relais · Montpellier, puis France</span>
-      <span><a href="charte.html">Charte</a> · <a href="candidater.html">Candidater</a></span>
-    </footer>
-  </div>
-  <script src="js/relais.js"></script>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<div class="wrap">
+<header class="site-header">
+<a class="brand" href="index.html" aria-label="Incubatech Relais, accueil">
+<img src="assets/logo-on-cream.svg" alt="" width="36" height="36">
+<span>Incubatech<br>Relais</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Navigation principale">
+<a href="index.html">Accueil</a>
+<a href="pour-qui.html">Pour qui</a>
+<a href="offre.html" aria-current="page">Les offres</a>
+<a href="modele.html">Le projet</a>
+<a href="app.html">L’outil de suivi</a>
+</nav>
+<a class="btn header-cta" href="candidater.html">Parlons de votre projet</a>
+</header>
+</div>
+<main id="contenu">
+<div class="wrap page-hero">
+<p class="kicker">Les offres</p>
+<h1>Le bon appui pour votre prochaine étape.</h1>
+<p class="lede">Vous pouvez nous confier l’accompagnement seul ou y ajouter la construction de votre produit. Dans les deux cas, le suivi coûte 150 € HT par mois.</p>
+</div>
+<section>
+<div class="wrap">
+<h2>Le suivi reste le point commun.</h2>
+<div class="grid-2 offers">
+<article class="offer">
+<p class="kicker">01 · Accompagnement</p>
+<h3>Avancer sur votre entreprise</h3>
+<p class="price">150 € <span>HT / mois</span>
+</p>
+<p>Valider le besoin, travailler l’offre et le modèle économique, préparer les prochaines décisions et rencontrer les bons interlocuteurs.</p>
+<ul>
+<li>Un rendez-vous individuel de 60 minutes chaque mois</li>
+<li>30 minutes de préparation et 30 minutes de suivi asynchrone</li>
+<li>Un plan d’action et des mises en relation selon les besoins</li>
+</ul>
+<p class="offer-end">Vous pouvez travailler avec votre propre prestataire.</p>
+</article>
+<article class="offer">
+<p class="kicker">02 · Accompagnement et produit</p>
+<h3>Avancer et construire votre MVP</h3>
+<p class="price">150 € <span>HT / mois + prestation</span>
+</p>
+<p>Le même accompagnement, avec un cadrage et une construction technique confiés à notre équipe, avec des prestataires si nécessaire.</p>
+<ul>
+<li>Cadrage : <strong>1 500 € HT</strong>
+</li>
+<li>MVP : <strong>20 000 à 30 000 € HT</strong> sur devis</li>
+<li>Web ou PWA, un parcours principal, 8 à 12 semaines selon le périmètre</li>
+</ul>
+<p class="offer-end">Prestation sans prise de participation pendant le pilote.</p>
+</article>
+</div>
+<p class="terms">Première période proposée : six mois d’accompagnement. Le développement reste optionnel et fait l’objet d’un contrat distinct. Hébergement, services tiers, maintenance et évolutions disposent d’un budget séparé.</p>
+</div>
+</section>
+<section>
+<div class="wrap">
+<h2>Ce que comprend la construction.</h2>
+<div class="grid-2">
+<div>
+<h3>Un cadrage utile en lui-même</h3>
+<p>À 1 500 € HT, le cadrage mobilise trois jours de travail interne sur deux semaines. Nous précisons le parcours principal, les maquettes et les tests avec vous. Vous pouvez ensuite choisir de développer, de changer le périmètre ou de vous arrêter.</p>
+</div>
+<div>
+<h3>Un MVP sur un périmètre convenu</h3>
+<p>La construction porte sur un produit web ou une PWA et un parcours principal, en 8 à 12 semaines selon le projet. Nous prévoyons un point hebdomadaire et une démonstration toutes les deux semaines.</p>
+</div>
+</div>
+<p class="terms">Le contrat précise le code, les droits et licences, les accès, la documentation, deux heures de formation et la correction des anomalies du périmètre livré pendant trente jours. Les évolutions et la maintenance font l’objet d’un accord distinct.</p>
+</div>
+</section>
+<section>
+<div class="wrap">
+<h2>Un exemple de budget sur six mois.</h2>
+<div class="table-scroll">
+<table>
+<caption>Exemple proposé avec un MVP à 24 000 € HT</caption>
+<thead>
+<tr>
+<th>Prestation</th>
+<th>Calcul</th>
+<th>Montant HT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accompagnement</td>
+<td>6 × 150 €</td>
+<td>900 €</td>
+</tr>
+<tr>
+<td>Cadrage</td>
+<td>Forfait</td>
+<td>1 500 €</td>
+</tr>
+<tr>
+<td>Construction du MVP</td>
+<td>Devis de référence</td>
+<td>24 000 €</td>
+</tr>
+<tr class="total">
+<th scope="row">Total</th>
+<td>Hors services tiers et évolutions</td>
+<td>
+<strong>26 400 €</strong>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<h2>Deux façons de financer le produit.</h2>
+<div class="grid-2">
+<div>
+<p class="kicker">Pendant le pilote</p>
+<h3>Une prestation facturée</h3>
+<p>Vous réglez les 150 € HT mensuels, puis le cadrage et la construction convenus au devis. Nous ne prenons aucune part de votre société.</p>
+</div>
+<div>
+<p class="kicker">Après le pilote</p>
+<h3>Une participation étudiée au cas par cas</h3>
+<p>Certains développements pourront être rémunérés par une participation négociée au capital, en conservant les 150 € HT mensuels. Cette voie dépendra de nos moyens et d’un accord sur le travail, la valorisation et les droits. Aucun pourcentage standard n’est fixé.</p>
+</div>
+</div>
+<p class="terms">Nous pouvons réaliser le produit en interne ou mobiliser des freelances. Vous pouvez aussi contractualiser directement avec votre prestataire et conserver notre accompagnement. Dans ce cas, sa prestation reste hors de notre chiffre d’affaires et aucune commission automatique n’est prévue.</p>
+<div class="actions">
+<a class="btn" href="candidater.html">Échanger sur votre besoin</a>
+</div>
+</div>
+</section>
+</main>
+<div class="wrap">
+<footer class="site-footer">
+<div>
+<strong>Incubatech Relais</strong>
+<p>Projet de création d’un incubateur tech.<br>Montpellier privilégié, Reims en alternative.</p>
+</div>
+<div>
+<p>Gabriel Fourier et Adrien Bardasu<br>Projet pédagogique MOMA · Université de Montpellier</p>
+<a href="charte.html">Identité visuelle</a> · <a href="candidater.html">Nous contacter</a>
+</div>
+<p class="footer-note">Proposition de lancement · version du 17 octobre 2026. Admissions, partenariats et financements à construire. Nom retenu sous réserve de la vérification des droits antérieurs.</p>
+</footer>
+</div>
+<script src="js/relais.js">
+</script>
 </body>
 </html>

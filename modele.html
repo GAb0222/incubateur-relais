@@ -1,60 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Modèle — Relais</title>
-  <meta name="description" content="Equity 10 %, prestation, commission, abonnement. Trois scénarios." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/relais.css" />
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le projet et son économie — Incubatech Relais</title>
+<meta name="description" content="Le pilote, les prévisions financières et les conditions de financement du projet Incubatech Relais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/relais.css">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 </head>
 <body>
-  <div class="wrap">
-    <header class="site-header">
-      <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36" /><span>Relais</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-      <nav id="nav">
-        <a href="index.html">Accueil</a>
-        <a href="pour-qui.html">Pour qui</a>
-        <a href="offre.html">Parcours</a>
-        <a href="modele.html" aria-current="page">Modèle</a>
-        <a href="app.html">L’app</a>
-        <a href="charte.html">Charte</a>
-      </nav>
-      <a class="btn" href="candidater.html">Candidater</a>
-    </header>
-
-    <div class="page-hero">
-      <p class="kicker">Livrables 2 et 4</p>
-      <h1>Alignés sur votre risque. Solvables sans subvention.</h1>
-      <p class="lede">La voie principale est la participation. La prestation existe vraiment, ce n’est pas un alibi. Le scénario central n’est pas le bas.</p>
-    </div>
-    <table>
-      <thead><tr><th>Voie</th><th>Quand</th><th>Contrepartie</th></tr></thead>
-      <tbody>
-        <tr><td>Participation</td><td>Entrée Build</td><td>10 % en moyenne (8–15 %)</td></tr>
-        <tr><td>Prestation</td><td>Refus d’equity</td><td>18–28 k€ HT</td></tr>
-        <tr><td>Sprint prototype</td><td>Avant Build, ou sans equity</td><td>7 k€ HT · 4–8 semaines</td></tr>
-        <tr><td>Commission</td><td>Freelance externe</td><td>12 %</td></tr>
-        <tr><td>Abo Scale</td><td>Après MVP</td><td>249 € HT / mois</td></tr>
-        <tr><td>Coworking</td><td>Poste, salle</td><td>150 € HT / poste / mois</td></tr>
-        <tr><td>Starter</td><td>Sélection</td><td>0 € — filtre, pas du CA</td></tr>
-      </tbody>
-    </table>
-    <div class="grid-3" style="padding:48px 0 80px;">
-      <article class="card"><p class="kicker">Pessimiste</p><h3>Preuve lente</h3><p>4 projets an 1, 25 an 4. CA an 4 ≈ 250 k€. Perte an 1, équilibre an 2. Lieu partenaire. App au stade CDC.</p></article>
-      <article class="card"><p class="kicker">Réaliste · central</p><h3>5 puis 20, 70 an 4</h3><p>Équilibre dès l’an 1. CA an 4 ≈ 715 k€, REX ≈ 160 k€. Mix Builds + Sprints + Scale + coworking. App V1 RDV et salles.</p></article>
-      <article class="card"><p class="kicker">Optimiste</p><h3>Marque, lieu, app, France</h3><p>8 projets an 1, 110 an 4. CA an 4 ≈ 1,23 M€. Atelier Relais. App complète : vitrine, RDV, salles, promo.</p></article>
-    </div>
-    
-    <footer class="site-footer">
-      <span>Incubateur Relais · Montpellier, puis France</span>
-      <span><a href="charte.html">Charte</a> · <a href="candidater.html">Candidater</a></span>
-    </footer>
-  </div>
-  <script src="js/relais.js"></script>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<div class="wrap">
+<header class="site-header">
+<a class="brand" href="index.html" aria-label="Incubatech Relais, accueil">
+<img src="assets/logo-on-cream.svg" alt="" width="36" height="36">
+<span>Incubatech<br>Relais</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Navigation principale">
+<a href="index.html">Accueil</a>
+<a href="pour-qui.html">Pour qui</a>
+<a href="offre.html">Les offres</a>
+<a href="modele.html" aria-current="page">Le projet</a>
+<a href="app.html">L’outil de suivi</a>
+</nav>
+<a class="btn header-cta" href="candidater.html">Parlons de votre projet</a>
+</header>
+</div>
+<main id="contenu">
+<div class="wrap page-hero">
+<p class="kicker">Le projet</p>
+<h1>Accompagner une entreprise, avec les moyens de construire.</h1>
+<p class="lede">Notre modèle réunit un accompagnement mensuel et une capacité de développement optionnelle. Les prestations financent le lancement. La prise de participation viendra seulement après le pilote.</p>
+</div>
+<section>
+<div class="wrap">
+<h2>Le pilote et l’année de référence.</h2>
+<div class="grid-2">
+<div>
+<h3>Six mois pour vérifier l’offre</h3>
+<p>Objectif : quatre porteurs accompagnés, deux cadrages et un MVP livré et utilisé. Le chiffre d’affaires visé est de <strong>30 600 € HT</strong> pour <strong>19 000 € de dépenses</strong>, sans rémunération des fondateurs au pilote.</p>
+</div>
+<div>
+<h3>Une année avec quatre MVP</h3>
+<p>Cinq porteurs suivis six mois, cinq cadrages et quatre MVP à 24 000 € HT représentent <strong>108 000 € HT de chiffre d’affaires</strong>. Les charges prévues sont de <strong>100 000 €</strong>, dont 42 000 € de coût chargé pour les deux fondateurs, 18 000 € de fonctionnement et 40 000 € de production externe.</p>
+</div>
+</div>
+<p class="terms">Prévisions des auteurs, version du 17 octobre 2026. Le pilote et l’année de référence sont deux périmètres distincts. Ces montants ne représentent ni des ventes réalisées ni des financements obtenus.</p>
+</div>
+</section>
+<section>
+<div class="wrap">
+<h2>Un équilibre qui dépend des ventes.</h2>
+<div class="table-scroll">
+<table>
+<caption>Hypothèses annuelles, montants HT</caption>
+<thead>
+<tr>
+<th>Scénario</th>
+<th>Chiffre d’affaires</th>
+<th>Charges</th>
+<th>Solde simplifié</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prudent : 4 porteurs, 4 cadrages, 3 MVP</td>
+<td>81 600 €</td>
+<td>90 000 €</td>
+<td>−8 400 €</td>
+</tr>
+<tr class="total">
+<td>Référence : 5 porteurs, 5 cadrages, 4 MVP</td>
+<td>108 000 €</td>
+<td>100 000 €</td>
+<td>+8 000 €</td>
+</tr>
+<tr>
+<td>Capacité haute : 6 porteurs, 6 cadrages, 5 MVP</td>
+<td>134 400 €</td>
+<td>110 000 €</td>
+<td>+24 400 €</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="terms">Solde avant impôt, intérêts et amortissements, hors TVA. Chaque porteur est suivi six mois. La capacité haute suppose des ressources supplémentaires. Avec 72 000 € de coût chargé pour les fondateurs au lieu de 42 000 €, le solde du scénario de référence devient −22 000 €.</p>
+</div>
+</section>
+<section>
+<div class="wrap">
+<h2>Financer un lancement réaliste.</h2>
+<p class="lede">Aucune subvention ni cession de titres n’entre dans les prévisions. Nous visons une réserve de trésorerie de 15 000 €, à financer avant les engagements de production. Elle ne constitue pas une demande de subvention déjà définie.</p>
+<p>Une coopération avec une collectivité ou un financeur doit porter sur une action précise, un public, un budget et des résultats. Les aides à notre structure sont distinctes des aides accessibles aux entrepreneurs accompagnés.</p>
+<p class="terms">Le cadre FSE+ Occitanie étudié impose notamment la gratuité du service financé. Nous devons donc distinguer une éventuelle action conventionnée de nos prestations commerciales et vérifier l’éligibilité avant toute demande.</p>
+<p class="source">Source : <a href="https://www.europe-en-occitanie.eu/IMG/pdf/7/4/e/fa_os_4_1_creation_entreprises_v1-1.pdf">Région Occitanie, fiche FSE+ création et reprise, mars 2026</a>.</p>
+</div>
+</section>
+<section>
+<div class="wrap">
+<h2>Une place dans l’écosystème.</h2>
+<p class="lede">Les incubateurs proposent des ressources entrepreneuriales et un réseau. Les agences et freelances réalisent une prestation technique. Les startup studios participent à la création d’entreprises selon leurs propres modalités. Incubatech Relais propose au porteur un suivi et une construction optionnelle, tout en lui laissant la direction du projet.</p>
+<p>Nous cherchons des partenaires pour orienter les projets et mobiliser des expertises. Aucun partenariat ni financement n’est annoncé comme obtenu.</p>
+<div class="actions">
+<a class="btn" href="candidater.html">Construire une coopération</a>
+</div>
+</div>
+</section>
+</main>
+<div class="wrap">
+<footer class="site-footer">
+<div>
+<strong>Incubatech Relais</strong>
+<p>Projet de création d’un incubateur tech.<br>Montpellier privilégié, Reims en alternative.</p>
+</div>
+<div>
+<p>Gabriel Fourier et Adrien Bardasu<br>Projet pédagogique MOMA · Université de Montpellier</p>
+<a href="charte.html">Identité visuelle</a> · <a href="candidater.html">Nous contacter</a>
+</div>
+<p class="footer-note">Proposition de lancement · version du 17 octobre 2026. Admissions, partenariats et financements à construire. Nom retenu sous réserve de la vérification des droits antérieurs.</p>
+</footer>
+</div>
+<script src="js/relais.js">
+</script>
 </body>
 </html>

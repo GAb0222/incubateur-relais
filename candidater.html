@@ -1,103 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Candidater — Relais</title>
-  <meta name="description" content="Déposer un projet Relais, promo Montpellier." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/relais.css" />
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un premier échange — Incubatech Relais</title>
+<meta name="description" content="Présentez votre besoin, votre budget ou votre proposition de coopération à Incubatech Relais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/relais.css">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 </head>
 <body>
-  <div class="wrap">
-    <header class="site-header">
-      <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36" /><span>Relais</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-      <nav id="nav">
-        <a href="index.html">Accueil</a>
-        <a href="pour-qui.html">Pour qui</a>
-        <a href="offre.html">Parcours</a>
-        <a href="modele.html">Modèle</a>
-        <a href="app.html">L’app</a>
-        <a href="charte.html">Charte</a>
-      </nav>
-      <a class="btn" href="candidater.html">Candidater</a>
-    </header>
-
-    <div class="page-hero">
-      <p class="kicker">Promo 1 · Montpellier</p>
-      <h1>Déposer un projet.</h1>
-    </div>
-    <div class="grid-2" style="padding-bottom:80px;">
-      <div>
-        <h2>On cherche</h2>
-        <p class="lede" style="margin-top:0;font-size:18px;">Un besoin et une solution. Un peu de temps. Un accès marché ou une capacité à aller le chercher. Léa ou Noa : même porte.</p>
-        <ul class="list-plain">
-          <li>Solution identifiée, pas une envie d’app</li>
-          <li>Porteur valide (temps + marché + vente)</li>
-          <li>Projet légal</li>
-        </ul>
-      </div>
-      <form id="form" novalidate>
-        <label for="name">Prénom et métier</label>
-        <input id="name" name="nom_metier" required placeholder="Léa, coach · Noa, projet" />
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required placeholder="vous@exemple.fr" />
-        <label for="stage">Vous avez déjà</label>
-        <select id="stage" name="situation">
-          <option>Des clients / une communauté + une solution</option>
-          <option>Une petite structure déjà en CA</option>
-          <option>Un potentiel clair, pas encore les moyens</option>
-          <option>Seulement une envie d’app, sans solution</option>
-        </select>
-        <label for="product">SaaS, app, ou les deux ?</label>
-        <input id="product" name="produit" />
-        <label for="block">Ce qui vous bloque</label>
-        <textarea id="block" name="blocage"></textarea>
-        <button class="btn" type="submit" id="send">Envoyer</button>
-        <div class="ok" id="ok"></div>
-      </form>
-    </div>
-    <script>
-      // Endpoint Formspree (ou équivalent) : créer un formulaire gratuit sur formspree.io et coller l'URL ici.
-      // Tant que c'est vide, le formulaire ouvre un email pré-rempli vers Relais : ça fonctionne sans serveur.
-      var RELAIS_FORM_ENDPOINT = "";
-      var RELAIS_MAIL = "gabriel.fourier@etu.umontpellier.fr";
-      var form = document.getElementById("form"), ok = document.getElementById("ok"), btn = document.getElementById("send");
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if (!form.reportValidity()) return;
-        var d = new FormData(form), lines = [];
-        d.forEach(function (v, k) { lines.push(k + " : " + v); });
-        try {
-          var log = JSON.parse(localStorage.getItem("relais_candidatures") || "[]");
-          log.push({ date: new Date().toISOString(), data: Object.fromEntries(d) });
-          localStorage.setItem("relais_candidatures", JSON.stringify(log));
-        } catch (_) {}
-        if (RELAIS_FORM_ENDPOINT) {
-          btn.disabled = true;
-          fetch(RELAIS_FORM_ENDPOINT, { method: "POST", body: d, headers: { Accept: "application/json" } })
-            .then(function (r) { if (!r.ok) throw new Error(r.status); ok.textContent = "Candidature envoyée. On vous répond sous 5 jours ouvrés."; ok.style.display = "block"; form.reset(); })
-            .catch(function () { ok.textContent = "Envoi impossible pour l’instant. Écrivez-nous : " + RELAIS_MAIL; ok.style.display = "block"; })
-            .finally(function () { btn.disabled = false; });
-        } else {
-          var subject = encodeURIComponent("Candidature Relais — " + d.get("nom_metier"));
-          var body = encodeURIComponent(lines.join("\n"));
-          window.location.href = "mailto:" + RELAIS_MAIL + "?subject=" + subject + "&body=" + body;
-          ok.textContent = "Votre messagerie s’ouvre avec la candidature pré-remplie. Envoyez-la, on vous répond sous 5 jours ouvrés.";
-          ok.style.display = "block";
-        }
-      });
-    </script>
-    
-    <footer class="site-footer">
-      <span>Incubateur Relais · Montpellier, puis France</span>
-      <span><a href="charte.html">Charte</a> · <a href="candidater.html">Candidater</a></span>
-    </footer>
-  </div>
-  <script src="js/relais.js"></script>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<div class="wrap">
+<header class="site-header">
+<a class="brand" href="index.html" aria-label="Incubatech Relais, accueil">
+<img src="assets/logo-on-cream.svg" alt="" width="36" height="36">
+<span>Incubatech<br>Relais</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Navigation principale">
+<a href="index.html">Accueil</a>
+<a href="pour-qui.html">Pour qui</a>
+<a href="offre.html">Les offres</a>
+<a href="modele.html">Le projet</a>
+<a href="app.html">L’outil de suivi</a>
+</nav>
+<a class="btn header-cta" href="candidater.html">Parlons de votre projet</a>
+</header>
+</div>
+<main id="contenu">
+<div class="wrap page-hero">
+<p class="kicker">Prenons contact</p>
+<h1>Parlons de ce que vous voulez construire.</h1>
+<p class="lede">Entrepreneur, partenaire ou financeur : présentez-nous votre besoin. Le premier échange de qualification est gratuit et n’engage pas à une admission.</p>
+</div>
+<section>
+<div class="wrap grid-2">
+<div>
+<h2>Avant de commencer</h2>
+<p>Le pilote vise quatre porteurs avec un besoin identifié, un budget et du temps pour tester. L’accompagnement coûte 150 € HT par mois. Le cadrage et la construction, si vous les choisissez, s’ajoutent à ce montant.</p>
+<p class="terms">Le formulaire prépare un email vers Gabriel Fourier. Vous le relisez et l’envoyez depuis votre messagerie. Aucun envoi automatique ni paiement n’a lieu sur ce site.</p>
+<p>
+<a class="text-link" href="mailto:gabriel.fourier@etu.umontpellier.fr">gabriel.fourier@etu.umontpellier.fr</a>
+</p>
+</div>
+<form id="contact-form">
+<label for="role">Vous nous contactez comme</label>
+<select id="role" name="profil">
+<option>Entrepreneur</option>
+<option>Partenaire</option>
+<option>Financeur</option>
+</select>
+<label for="name">Votre nom et votre activité</label>
+<input id="name" name="nom" autocomplete="name" required maxlength="160">
+<label for="email">Votre email</label>
+<input id="email" name="email" type="email" autocomplete="email" required maxlength="200">
+<label for="offer">Votre besoin</label>
+<select id="offer" name="besoin">
+<option>Accompagnement seul à 150 € HT / mois</option>
+<option>Accompagnement et construction du produit</option>
+<option>Partenariat ou financement</option>
+<option>À préciser ensemble</option>
+</select>
+<label for="budget">Budget envisagé pour le produit, hors accompagnement</label>
+<select id="budget" name="budget">
+<option>À préciser</option>
+<option>Accompagnement seul, sans développement</option>
+<option>Cadrage à 1 500 € HT</option>
+<option>20 000 à 30 000 € HT pour un MVP, plus cadrage</option>
+<option>Autre budget à discuter</option>
+</select>
+<label for="message">Votre projet ou votre proposition</label>
+<textarea id="message" name="message" required maxlength="2500" placeholder="Quel problème voulez-vous résoudre ? Qui sont les utilisateurs ? Quel appui recherchez-vous ?">
+</textarea>
+<p class="form-help">Ces informations servent à préparer votre email de prise de contact. Elles ne sont pas enregistrées par le site. Évitez d’y inclure des données confidentielles.</p>
+<button class="btn" type="submit">Préparer mon email</button>
+<p id="contact-status" class="ok" role="status" aria-live="polite">
+</p>
+<p class="form-help">Si votre messagerie ne s’ouvre pas, utilisez l’adresse indiquée à gauche.</p>
+</form>
+</div>
+</section>
+<script src="js/contact.js">
+</script>
+</main>
+<div class="wrap">
+<footer class="site-footer">
+<div>
+<strong>Incubatech Relais</strong>
+<p>Projet de création d’un incubateur tech.<br>Montpellier privilégié, Reims en alternative.</p>
+</div>
+<div>
+<p>Gabriel Fourier et Adrien Bardasu<br>Projet pédagogique MOMA · Université de Montpellier</p>
+<a href="charte.html">Identité visuelle</a> · <a href="candidater.html">Nous contacter</a>
+</div>
+<p class="footer-note">Proposition de lancement · version du 17 octobre 2026. Admissions, partenariats et financements à construire. Nom retenu sous réserve de la vérification des droits antérieurs.</p>
+</footer>
+</div>
+<script src="js/relais.js">
+</script>
 </body>
 </html>

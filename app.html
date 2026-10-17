@@ -1,52 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>L’application Relais</title>
-  <meta name="description" content="Vitrine, rendez-vous, salles, vie de promo." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/relais.css" />
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L’outil de suivi — Incubatech Relais</title>
+<meta name="description" content="Un prototype exploratoire pour organiser les échanges et le suivi des projets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/relais.css">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 </head>
 <body>
-  <div class="wrap">
-    <header class="site-header">
-      <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36" /><span>Relais</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-      <nav id="nav">
-        <a href="index.html">Accueil</a>
-        <a href="pour-qui.html">Pour qui</a>
-        <a href="offre.html">Parcours</a>
-        <a href="modele.html">Modèle</a>
-        <a href="app.html" aria-current="page">L’app</a>
-        <a href="charte.html">Charte</a>
-      </nav>
-      <a class="btn" href="candidater.html">Candidater</a>
-    </header>
-
-    <div class="page-hero">
-      <p class="kicker">Prototype iOS · données fictives</p>
-      <h1>Si on construit des apps, la nôtre n’est pas le parent pauvre.</h1>
-      <p class="lede">Le site est la vitrine publique. L’app iOS Relais est déjà un prototype ouvrable : rendez-vous, inscription à un parcours, salles, projets sortis. Données fictives. Ensuite : PWA (web et Android). Pas d’Android natif.</p>
-    </div>
-    <div class="grid-3" style="padding-bottom:24px;">
-      <article class="card"><h3>Vitrine</h3><p>Projets, alumni, récits métier. Ce qu’on a vraiment construit, pas une galerie d’intentions.</p></article>
-      <article class="card"><h3>Rendez-vous</h3><p>Créneau avec un accompagnateur, visio ou présentiel. Réponse au doigt dès le pointer-down.</p></article>
-      <article class="card"><h3>Lieu</h3><p>Salle, bureau, coworking. Réservation, QR, qui est là aujourd’hui.</p></article>
-      <article class="card"><h3>Promo</h3><p>Fil, événements, qui est au Starter, au Build, au Scale.</p></article>
-      <article class="card"><h3>Candidature</h3><p>Statut du dossier. Pas un CRM caché : le porteur voit où il en est.</p></article>
-      <article class="card"><h3>Qualité</h3><p>iOS natif : doigt, haptique, VoiceOver. PWA pour le reste. Pas une rustine, pas deux natives.</p></article>
-    </div>
-    <p class="muted" style="padding:0 0 80px;">Hors V1 : paiement de l’abo Scale in-app, messagerie type Slack, marketplace freelance. Calendrier lié aux scénarios financiers. Détail : CDC_application_Relais.docx.</p>
-    
-    <footer class="site-footer">
-      <span>Incubateur Relais · Montpellier, puis France</span>
-      <span><a href="charte.html">Charte</a> · <a href="candidater.html">Candidater</a></span>
-    </footer>
-  </div>
-  <script src="js/relais.js"></script>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<div class="wrap">
+<header class="site-header">
+<a class="brand" href="index.html" aria-label="Incubatech Relais, accueil">
+<img src="assets/logo-on-cream.svg" alt="" width="36" height="36">
+<span>Incubatech<br>Relais</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Navigation principale">
+<a href="index.html">Accueil</a>
+<a href="pour-qui.html">Pour qui</a>
+<a href="offre.html">Les offres</a>
+<a href="modele.html">Le projet</a>
+<a href="app.html" aria-current="page">L’outil de suivi</a>
+</nav>
+<a class="btn header-cta" href="candidater.html">Parlons de votre projet</a>
+</header>
+</div>
+<main id="contenu">
+<div class="wrap page-hero">
+<p class="kicker">L’outil de suivi</p>
+<h1>Un espace pour garder le fil de votre projet.</h1>
+<p class="lede">Nous avons exploré un prototype d’application pour réunir les rendez-vous, les documents et les prochaines étapes. Il utilise des données de démonstration et ne constitue pas un service déployé auprès des porteurs.</p>
+</div>
+<section>
+<div class="wrap">
+<h2>Les usages envisagés.</h2>
+<div class="grid-3">
+<div>
+<h3>Les rendez-vous</h3>
+<p>Retrouver le prochain échange avec son accompagnateur et les décisions du précédent.</p>
+</div>
+<div>
+<h3>Le projet</h3>
+<p>Partager les documents utiles, les priorités et les retours sur le produit.</p>
+</div>
+<div>
+<h3>Les échanges</h3>
+<p>Identifier le bon interlocuteur et garder une visibilité sur les étapes à venir.</p>
+</div>
+</div>
+<p class="terms">Le pilote déterminera les fonctions nécessaires. Aucun lieu ni service de réservation n’est annoncé comme ouvert. L’application ne conditionne pas l’entrée dans l’accompagnement.</p>
+<div class="actions">
+<a class="btn ghost" href="offre.html">Revenir aux offres</a>
+</div>
+</div>
+</section>
+</main>
+<div class="wrap">
+<footer class="site-footer">
+<div>
+<strong>Incubatech Relais</strong>
+<p>Projet de création d’un incubateur tech.<br>Montpellier privilégié, Reims en alternative.</p>
+</div>
+<div>
+<p>Gabriel Fourier et Adrien Bardasu<br>Projet pédagogique MOMA · Université de Montpellier</p>
+<a href="charte.html">Identité visuelle</a> · <a href="candidater.html">Nous contacter</a>
+</div>
+<p class="footer-note">Proposition de lancement · version du 17 octobre 2026. Admissions, partenariats et financements à construire. Nom retenu sous réserve de la vérification des droits antérieurs.</p>
+</footer>
+</div>
+<script src="js/relais.js">
+</script>
 </body>
 </html>
